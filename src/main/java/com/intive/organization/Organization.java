@@ -9,6 +9,10 @@ public class Organization {
     @Id
     private String name;
 
+    public Organization() {
+        
+    }
+
     public Organization(String name) {
         this.name = name;
     }
