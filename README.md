@@ -1,1 +1,1 @@
-conference-room-api
+conference-com.intive.room-api

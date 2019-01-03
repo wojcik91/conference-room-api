@@ -1,4 +1,4 @@
-package organization;
+package com.intive.organization;
 
 import org.springframework.data.repository.CrudRepository;
 

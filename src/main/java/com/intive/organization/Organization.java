@@ -1,4 +1,4 @@
-package organization;
+package com.intive.organization;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

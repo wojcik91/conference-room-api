@@ -1,4 +1,4 @@
-package springbootstarter;
+package com.intive;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
