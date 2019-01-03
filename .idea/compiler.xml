@@ -2,6 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="com.intive.conference-room-api.main" target="1.8" />
+      <module name="com.intive.conference-room-api.test" target="1.8" />
       <module name="com.intive.patronage.conference-room-api.main" target="1.8" />
       <module name="com.intive.patronage.conference-room-api.test" target="1.8" />
       <module name="conference-room-api.main" target="1.8" />
