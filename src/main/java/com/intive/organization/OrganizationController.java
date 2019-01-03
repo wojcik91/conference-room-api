@@ -17,9 +17,9 @@ public class OrganizationController {
         return organizationService.getAllOrganizations();
     }
 
-    @RequestMapping("/organizations/{name}")
-    public Optional<Organization> getOrganization(@PathVariable String name) {
-        return organizationService.getOrganization(name);
+    @RequestMapping("/organizations/{id}")
+    public Optional<Organization> getOrganization(@PathVariable String id) {
+        return organizationService.getOrganization(id);
     }
 
     @RequestMapping(value = "/organizations", method = RequestMethod.POST)
@@ -27,13 +27,13 @@ public class OrganizationController {
         organizationService.addOrganization(organization);
     }
 
-    @RequestMapping(value = "/organizations/{name}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/organizations/{id}", method = RequestMethod.PUT)
     public void updateOrganization(@RequestBody Organization organization) {
         organizationService.updateOrganization(organization);
     }
 
-    @RequestMapping(value = "/organizations/{name}", method = RequestMethod.DELETE)
-    public void deleteOrganization(@PathVariable String name) {
-        organizationService.deleteOrganization(name);
+    @RequestMapping(value = "/organizations/{id}", method = RequestMethod.DELETE)
+    public void deleteOrganization(@PathVariable String id) {
+        organizationService.deleteOrganization(id);
     }
 }

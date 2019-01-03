@@ -20,8 +20,8 @@ public class OrganizationService {
         return organizations;
     }
 
-    public Optional<Organization> getOrganization(String name) {
-        return organizationRepository.findById(name);
+    public Optional<Organization> getOrganization(String id) {
+        return organizationRepository.findById(id);
     }
 
     public void addOrganization(Organization organization) {
@@ -32,7 +32,7 @@ public class OrganizationService {
         organizationRepository.save(organization);
     }
 
-    public void deleteOrganization(String name) {
-        organizationRepository.deleteById(name);
+    public void deleteOrganization(String id) {
+        organizationRepository.deleteById(id);
     }
 }
