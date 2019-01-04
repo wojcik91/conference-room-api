@@ -80,4 +80,12 @@ public class Room {
     public void setStanding(Integer standing) {
         this.standing = standing;
     }
+
+    public Organization getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(Organization organization) {
+        this.organization = organization;
+    }
 }
