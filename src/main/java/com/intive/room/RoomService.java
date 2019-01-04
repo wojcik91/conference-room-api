@@ -16,7 +16,7 @@ public class RoomService {
     public List<Room> getAllRooms(Long orgId) {
 
         List<Room> rooms = new ArrayList<>();
-        roomRepository.findAll().forEach(rooms::add);
+        roomRepository.findByOrganizationId(orgId).forEach(rooms::add);
         return rooms;
     }
 
