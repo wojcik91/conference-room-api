@@ -5,12 +5,14 @@ import com.intive.organization.Organization;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Room {
 
     @Id
     private String id;
+    @Size(min = 2, max = 20)
     private String name;
     private Integer floor;
     private Boolean available;
