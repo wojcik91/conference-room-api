@@ -29,6 +29,10 @@ public class Room {
 
     }
 
+    public Room(long id) {
+        this.id = id;
+    }
+
     public Room(long id, @Size(min = 2, max = 20) String name, @Size(min = 2, max = 20) String description, Integer floor, Boolean available, Integer seated, Integer standing, Organization organization) {
         this.id = id;
         this.name = name;
