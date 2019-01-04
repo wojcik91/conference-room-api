@@ -36,3 +36,4 @@ public class OrganizationController {
     public void deleteOrganization(@PathVariable Long id) {
         organizationService.deleteOrganization(id);
     }
+}
