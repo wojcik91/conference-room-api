@@ -13,27 +13,27 @@ public class RoomController {
     @Autowired
     private RoomService roomService;
 
-    @RequestMapping("/organizations/{id}/rooms")
+    @RequestMapping("/organizations/{orgId}/rooms")
     public List<Room> getAllRooms() {
 
     }
 
-    @RequestMapping("/organizations/{id}/rooms/{roomId}")
+    @RequestMapping("/organizations/{orgId}/rooms/{roomId}")
     public Room getRoom() {
 
     }
 
-    @RequestMapping(value = "/organizations/{id}/rooms", method = RequestMethod.POST)
+    @RequestMapping(value = "/organizations/{orgId}/rooms", method = RequestMethod.POST)
     public void addRoom() {
 
     }
 
-    @RequestMapping(value = "/organizations/{id}/rooms/{roomId}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/organizations/{orgId}/rooms/{roomId}", method = RequestMethod.PUT)
     public void updateRoom() {
 
     }
 
-    @RequestMapping(value = "/organizations/{id}/rooms/{roomId}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/organizations/{orgId}/rooms/{roomId}", method = RequestMethod.DELETE)
     public void deleteRoom() {
 
     }
