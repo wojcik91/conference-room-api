@@ -3,6 +3,7 @@ package com.intive.organization;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,12 +24,12 @@ public class OrganizationController {
     }
 
     @RequestMapping(value = "/organizations", method = RequestMethod.POST)
-    public void addOrganization(@RequestBody Organization organization) {
+    public void addOrganization(@Valid @RequestBody Organization organization) {
         organizationService.addOrganization(organization);
     }
 
     @RequestMapping(value = "/organizations/{id}", method = RequestMethod.PUT)
-    public void updateOrganization(@RequestBody Organization organization) {
+    public void updateOrganization(@Valid @RequestBody Organization organization) {
         organizationService.updateOrganization(organization);
     }
 

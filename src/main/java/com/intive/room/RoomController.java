@@ -4,6 +4,7 @@ import com.intive.organization.Organization;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,13 +25,14 @@ public class RoomController {
     }
 
     @RequestMapping(value = "/organizations/{orgId}/rooms", method = RequestMethod.POST)
-    public void addRoom(@RequestBody Room room, @PathVariable Long orgId) {
+    public void addRoom(@Valid @RequestBody Room room, @PathVariable Long orgId) {
         room.setOrganization(new Organization(orgId, ""));
         roomService.addRoom(room);
     }
 
     @RequestMapping(value = "/organizations/{orgId}/rooms/{roomId}", method = RequestMethod.PUT)
-    public void updateRoom(@RequestBody Room room, @PathVariable Long orgId) {
+    public void updateRoom(@Valid @RequestBody Room room, @PathVariable Long orgId, @PathVariable Long roomId) {
+        room.setId(roomId);
         room.setOrganization(new Organization(orgId, ""));
         roomService.updateRoom(room);
     }
