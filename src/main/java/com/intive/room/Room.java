@@ -15,6 +15,8 @@ public class Room {
     private long id;
     @Size(min = 2, max = 20)
     private String name;
+    @Size(min = 2, max = 20)
+    private String description;
     private Integer floor;
     private Boolean available;
     private Integer seated;
@@ -27,13 +29,15 @@ public class Room {
 
     }
 
-    public Room(Long id, String name, Integer floor, Boolean available, Integer seated, Integer standing) {
+    public Room(long id, @Size(min = 2, max = 20) String name, @Size(min = 2, max = 20) String description, Integer floor, Boolean available, Integer seated, Integer standing, Organization organization) {
         this.id = id;
         this.name = name;
+        this.description = description;
         this.floor = floor;
         this.available = available;
         this.seated = seated;
         this.standing = standing;
+        this.organization = organization;
     }
 
     public Long getId() {
@@ -52,9 +56,18 @@ public class Room {
         this.name = name;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public Integer getFloor() {
         return floor;
     }
+
 
     public void setFloor(Integer floor) {
         this.floor = floor;
