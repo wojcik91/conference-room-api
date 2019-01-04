@@ -1,7 +1,10 @@
 package com.intive.room;
 
+import com.intive.organization.Organization;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Room {
@@ -13,6 +16,9 @@ public class Room {
     private Boolean available;
     private Integer seated;
     private Integer standing;
+
+    @ManyToOne
+    private Organization organization;
 
     public Room() {
 
