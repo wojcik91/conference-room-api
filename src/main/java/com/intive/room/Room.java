@@ -3,6 +3,7 @@ package com.intive.room;
 import com.intive.organization.Organization;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Size;
@@ -10,8 +11,8 @@ import javax.validation.constraints.Size;
 @Entity
 public class Room {
 
-    @Id
-    private String id;
+    @Id @GeneratedValue
+    private long id;
     @Size(min = 2, max = 20)
     private String name;
     private Integer floor;
@@ -26,7 +27,7 @@ public class Room {
 
     }
 
-    public Room(String id, String name, Integer floor, Boolean available, Integer seated, Integer standing) {
+    public Room(Long id, String name, Integer floor, Boolean available, Integer seated, Integer standing) {
         this.id = id;
         this.name = name;
         this.floor = floor;
@@ -35,11 +36,11 @@ public class Room {
         this.standing = standing;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

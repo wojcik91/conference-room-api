@@ -1,11 +1,11 @@
 package com.intive.room;
 
+import com.intive.organization.Organization;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class RoomController {
@@ -14,27 +14,29 @@ public class RoomController {
     private RoomService roomService;
 
     @RequestMapping("/organizations/{orgId}/rooms")
-    public List<Room> getAllRooms() {
-
+    public List<Room> getAllRooms(@PathVariable Long orgId) {
+        return roomService.getAllRooms(orgId);
     }
 
     @RequestMapping("/organizations/{orgId}/rooms/{roomId}")
-    public Room getRoom() {
-
+    public Optional<Room> getRoom(@PathVariable Long roomId) {
+        return roomService.getRoom(roomId);
     }
 
     @RequestMapping(value = "/organizations/{orgId}/rooms", method = RequestMethod.POST)
-    public void addRoom() {
-
+    public void addRoom(@RequestBody Room room, @PathVariable Long orgId) {
+        room.setOrganization(new Organization(orgId, ""));
+        roomService.addRoom(room);
     }
 
     @RequestMapping(value = "/organizations/{orgId}/rooms/{roomId}", method = RequestMethod.PUT)
-    public void updateRoom() {
-
+    public void updateRoom(@RequestBody Room room, @PathVariable Long orgId) {
+        room.setOrganization(new Organization(orgId, ""));
+        roomService.updateRoom(room);
     }
 
     @RequestMapping(value = "/organizations/{orgId}/rooms/{roomId}", method = RequestMethod.DELETE)
-    public void deleteRoom() {
-
+    public void deleteRoom(@PathVariable Long roomId) {
+        roomService.deleteRoom(roomId);
     }
 }

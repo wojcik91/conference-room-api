@@ -13,14 +13,14 @@ public class RoomService {
     @Autowired
     private RoomRepository roomRepository;
 
-    public List<Room> getAllRooms() {
+    public List<Room> getAllRooms(Long orgId) {
 
         List<Room> rooms = new ArrayList<>();
         roomRepository.findAll().forEach(rooms::add);
         return rooms;
     }
 
-    public Optional<Room> getRoom(String id) {
+    public Optional<Room> getRoom(Long id) {
         return roomRepository.findById(id);
     }
 
@@ -32,7 +32,7 @@ public class RoomService {
         roomRepository.save(room);
     }
 
-    public void deleteRoom(String id) {
+    public void deleteRoom(Long id) {
         roomRepository.deleteById(id);
     }
 }
