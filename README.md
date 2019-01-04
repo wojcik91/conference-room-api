@@ -1,5 +1,7 @@
 # conference-room-api
 
+A basic REST API for CRUD operations in a conference room reservation system. Written for the first challenge in Intive Patronage 2019 back-end group.
+
 ## Prerequisites
 
 The project requires Java 8 and Gradle 4.4+ to be installed.
