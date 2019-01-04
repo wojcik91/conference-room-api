@@ -10,7 +10,7 @@ public class Organization {
 
     @Id @GeneratedValue
     private long id;
-    @Size(min = 2, max = 20)
+    @Size(min = 2, max = 20, message = "Organization name must be between 2 and 20 characters")
     private String name;
 
     public Organization() {
