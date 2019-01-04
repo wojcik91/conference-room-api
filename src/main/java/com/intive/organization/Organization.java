@@ -1,5 +1,6 @@
 package com.intive.organization;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,6 +11,7 @@ public class Organization {
 
     @Id @GeneratedValue
     private long id;
+    @Column(unique=true, nullable=false)
     @Size(min = 2, max = 20, message = "Organization name must be between 2 and 20 characters")
     private String name;
 
