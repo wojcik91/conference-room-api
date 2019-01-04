@@ -2,6 +2,6 @@ package com.intive.organization;
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface OrganizationRepository extends CrudRepository<Organization, String> {
+public interface OrganizationRepository extends CrudRepository<Organization, Long> {
 
 }

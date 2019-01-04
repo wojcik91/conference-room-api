@@ -1,14 +1,15 @@
 package com.intive.organization;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
 @Entity
 public class Organization {
 
-    @Id
-    private String id;
+    @Id @GeneratedValue
+    private long id;
     @Size(min = 2, max = 20)
     private String name;
 
@@ -16,16 +17,16 @@ public class Organization {
 
     }
 
-    public Organization(String id, String name) {
+    public Organization(long id, @Size(min = 2, max = 20) String name) {
         this.id = id;
         this.name = name;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
