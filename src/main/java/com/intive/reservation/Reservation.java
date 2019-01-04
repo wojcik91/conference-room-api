@@ -2,10 +2,7 @@ package com.intive.reservation;
 
 import com.intive.room.Room;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
